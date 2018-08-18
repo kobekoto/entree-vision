@@ -46,7 +46,7 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$tabs-ios-tab-font-size: 10px;
 
 
 // App Material Design Variables
@@ -86,3 +86,6 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// $tabs-ios-tab-font-size: 10px;
+// $tabs-md-tab-font-size: 1.1rem;
