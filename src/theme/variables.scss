@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  appdark: rgba(34, 32, 31, 1)
 );
 
 
@@ -89,3 +90,4 @@ $tabs-ios-tab-font-size: 10px;
 
 // $tabs-ios-tab-font-size: 10px;
 // $tabs-md-tab-font-size: 1.1rem;
+$toolbar-ios-title-text-color: #FFFFFF;

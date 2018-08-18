@@ -4,15 +4,32 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header >
 
   <ion-navbar>
-    <ion-title>menus</ion-title>
+    <ion-title>Menu</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
-</ion-content>
+<ion-content class="category-view">
+  <ion-list no-lines>
+    <a ion-item 
+      *ngFor="let category of categories;
+      let isOdd=odd; 
+      let isEven=even"
+      [class.odd]="isOdd"
+      [class.even]="isEven">
+      <div class="image-wrap">
+          <img 
+            class="category-overlay-img">
+          <div class="overlay-text-box">
+              <div class="category-title-container">
+                  <div class="category-title category-title-name"> {{ category}}</div>
+                  <div class="category-title category-count "> 24 Dishes</div>
+              </div>
+          </div>
+      </div>
+    </a>
+  </ion-list>
+</ion-content>  
