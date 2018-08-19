@@ -7,12 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>reservations</ion-title>
+    <ion-title text-center>Entree Vision</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="reservations-view" >
+    <div class="reservation-title-container">
+        <div class="reservation-page-title-container">
+            <h3 class="reservation-page-title">Book your reservation</h3>
+            <div class="address-container">
+                <span>3463 Procyon Street</span>
+                <span>Las Vegas, NV 89102</span>
+            </div>
+        </div>
+    </div>
+    <div class="schedule">
+        <h4 text-center>Open Hours</h4>
+        <ion-grid class="days-container">
+            <ion-row 
+              class="days-hours-row"
+              *ngFor="let days of daysOfWeek">
+                <ion-col 
+                    text-right
+                    class="day-of-the-week-container">
+                    <span>{{ days.day }}</span>
+                </ion-col>
+                <ion-col 
+                    text-left
+                    class="hours-open-container">
+                    <span>{{ days.hours }}</span>
+                </ion-col>
+            </ion-row>
+            <div class="orange-middle-block"></div>
+        </ion-grid>
+    </div>
 </ion-content>

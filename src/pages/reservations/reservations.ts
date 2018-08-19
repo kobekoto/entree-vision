@@ -18,6 +18,39 @@ export class ReservationsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  // TODO: JSON-Server convert and create service
+  daysOfWeek = [
+    {
+      day: 'Monday',
+      hours: 'closed'
+    },
+    {
+      day: 'Tuesday',
+      hours: '5pm - 11pm'
+    },
+    {
+      day: 'Wednesday',
+      hours: '5pm - 11pm'
+    },
+    {
+      day: 'Thursday',
+      hours: '5pm - 11pm'
+    },
+    {
+      day: 'Friday',
+      hours: '5pm - 11pm'
+    },
+    {
+      day: 'Saturday',
+      hours: '5pm - 11pm'
+    },
+    {
+      day: 'Sunday',
+      hours: '5pm - 11pm'
+    },
+  ];
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReservationsPage');
   }
