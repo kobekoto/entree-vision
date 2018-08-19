@@ -11,6 +11,7 @@ import { NewsEventsPage } from '../pages/news-events/news-events';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CategoryComponent } from '../components/category/category';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     NewsEventsPage,
     AboutPage,
     ContactPage,
-    TabsPage
+    TabsPage,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

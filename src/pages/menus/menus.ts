@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenusPage {
 
-  categories = ['Breakfast', 'Lunch', 'Dinner', 'Desserts', 'Wine'];
+  menus = ['Breakfast', 'Lunch', 'Dinner', 'Desserts', 'Wine'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
