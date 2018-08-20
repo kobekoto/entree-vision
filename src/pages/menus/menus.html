@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content color="appdark" class="category-view">
+<ion-content class="category-view">
   <ion-list no-lines>
     <app-category 
       *ngFor="let menu of menus
@@ -21,6 +21,7 @@
       [class.odd]="isOdd"
       [class.even]="isEven"
       [category]="menu"
+      [subtitle]="menu.meals.length"
       >
       {{ menu }}
     </app-category>

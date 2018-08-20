@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
+import { MenuService } from '../../services/menus.service';
 
 /**
  * Generated class for the MenusPage page.
@@ -13,15 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-menus',
   templateUrl: 'menus.html',
 })
-export class MenusPage {
+export class MenusPage implements OnInit {
+  menus = [];
 
-  menus = ['Breakfast', 'Lunch', 'Dinner', 'Desserts', 'Wine'];
+  constructor(private menuService: MenuService) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenusPage');
-  }
+  ngOnInit() {
+      this.menuService.getMenus()
+        .subscribe(
+          data => {
+            this.menus = data;
+          }
+        )
+    }
 
 }

@@ -1,12 +1,18 @@
 <!-- Generated template for the CategoryComponent component -->
 <a ion-item >
     <div class="image-wrap">
-        <img 
+        <img
+          [src]="category.category_image" 
           class="category-overlay-img">
         <div class="overlay-text-box">
             <div class="category-title-container">
-                <div class="category-title category-title-name"> {{ category}}</div>
-                <div class="category-title category-count "> 24 Dishes</div>
+                <div class="category-title category-title-name"> {{ category.name}}</div>
+                <div class="category-title category-count "> 
+                  {{ subtitle }}  
+                    <span
+                    class="category-meal-id" 
+                    *ngIf="category.meals"> Dishes</span>
+                </div>
             </div>
         </div>
     </div>
