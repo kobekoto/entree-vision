@@ -18,10 +18,12 @@
       *ngFor="let menu of menus
       let isOdd=odd; 
       let isEven=even"
+      [ngClass]="menu.name.toLowerCase()"
       [class.odd]="isOdd"
       [class.even]="isEven"
       [category]="menu"
       [subtitle]="menu.meals.length"
+      (click)="goToMenuCategory(menu)"
       >
       {{ menu }}
     </app-category>

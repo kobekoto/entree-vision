@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { MenuService } from '../../services/menus.service';
+import { MenuCategoryPage } from '../menu-category/menu-category';
+import { MealMenu } from '../../models/meal-menu';
 
 /**
  * Generated class for the MenusPage page.
@@ -15,17 +17,21 @@ import { MenuService } from '../../services/menus.service';
   templateUrl: 'menus.html',
 })
 export class MenusPage implements OnInit {
-  menus = [];
+  menus: MealMenu[] = [];
 
-  constructor(private menuService: MenuService) {}
+  constructor(
+    private menuService: MenuService,
+    private navCtrl: NavController) {}
 
   ngOnInit() {
       this.menuService.getMenus()
         .subscribe(
-          data => {
-            this.menus = data;
-          }
+          data => this.menus = data
         )
+    }
+
+    goToMenuCategory(menu) {
+      this.navCtrl.push(MenuCategoryPage, { menu });
     }
 
 }

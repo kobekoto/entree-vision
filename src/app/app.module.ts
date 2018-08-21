@@ -14,6 +14,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CategoryComponent } from '../components/category/category';
 import { MenuService } from '../services/menus.service';
+import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MenuService } from '../services/menus.service';
     AboutPage,
     ContactPage,
     TabsPage,
-    CategoryComponent
+    CategoryComponent,
+    MenuCategoryPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { MenuService } from '../services/menus.service';
     NewsEventsPage,
     AboutPage,
     ContactPage,
-    TabsPage
+    TabsPage,
+    MenuCategoryPage
   ],
   providers: [
     StatusBar,

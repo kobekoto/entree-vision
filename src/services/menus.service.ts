@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { map } from 'rxjs/operators';
+import { MealMenu } from "../models/meal-menu";
  
 @Injectable()
 export class MenuService {
@@ -8,6 +8,6 @@ export class MenuService {
 
     getMenus() {
         return this.http
-            .get('http://localhost:3000/menus')
+            .get<MealMenu[]>('http://localhost:3000/menus')
     }
 }
