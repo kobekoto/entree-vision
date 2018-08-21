@@ -1,5 +1,17 @@
 app-category { 
 
+    &.category-page {
+        background-color: #252525;
+        .item-ios {
+            background-color: #252525;
+        }
+        .item-ios > .item-inner {
+            background-image: none;
+            padding-right: 0;
+            border-bottom: none;
+        }
+    }
+
     &.even {
         .item-ios {
             background-color: rgba(34, 32, 31, 0.8);

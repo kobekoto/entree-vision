@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MealMenu } from '../../models/meal-menu';
 
 /**
  * Generated class for the MenuCategoryPage page.
@@ -13,10 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-menu-category',
   templateUrl: 'menu-category.html',
 })
-export class MenuCategoryPage {
+export class MenuCategoryPage implements OnInit {
+  private mealMenu: MealMenu;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(navParams.data.menu);
+  }
+
+  ngOnInit() {
+    this.mealMenu = this.navParams.data.menu;
+    console.log(this.mealMenu); 
   }
 
   

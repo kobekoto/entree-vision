@@ -7,12 +7,59 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>menu-category</ion-title>
+    <ion-title>{{ mealMenu.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+  <app-category 
+    class="category-page"
+    [ngClass]="mealMenu.name.toLowerCase()"
+    [category]="mealMenu"
+    [subtitle]="mealMenu.meals.length">
+  </app-category>
 
+  <ion-list
+    [ngClass]="mealMenu.name.toLowerCase()">
+    <ion-item-sliding
+      *ngFor="let meal of mealMenu.meals">
+        <ion-item>
+          <ion-avatar item-start class="meal-avatar">
+            <img [src]="meal.image">
+            <div 
+              class="meal-price"
+              text-center > 
+              {{ meal.price | currency: 'USD':'symbol':'2.0-0'  }} 
+            </div>
+          </ion-avatar>
+          <div class="meal-info-container">
+            <div class="meal-name-container">
+                <span class="meal-name"> {{ meal.name }}</span>
+            </div>
+            <div class="meal-description-container">
+                <span class="meal-description">
+                  {{ meal.description }}
+                </span>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item-options side="right">
+          <button
+            class="menu-share-button"
+            ion-button>
+            <ion-icon
+              name="share"></ion-icon>
+          </button>
+          <button
+            class="menu-send-button"
+            ion-button>
+            <ion-icon
+              name="send"></ion-icon>
+          </button>
+          
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

@@ -1,3 +1,79 @@
 page-menu-category {
+    $item-ios-avatar-size: 98px;
+
+    .scroll-content {
+        background-color: #252525;
+    }
+    .image-wrap {
+		display: flex;
+		padding-bottom: 20px;
+		.overlay-text-box {
+			order: -1;
+		}
+		img.category-overlay-img {
+		    height: 120px;
+		    width: 120px;
+		    margin-left: auto;
+		}		
+    }
+    .category-nav-title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+        span.restaurant-title {
+            margin-top: 2px;
+        }
+    }
+
+	.item-wrapper {
+		display: flex;
+        min-height: 150px;
+        border-bottom: 1px solid rgba(194, 136, 87, 1);
+        .item-ios {
+            background-color: #252525;
+            padding-left: 30px;
+        }
+        .item-block > .item-inner {
+            border-bottom: none;
+        }
+    }
+    
+
+    .meal-info-container {
+        max-width: 200px;
+        white-space: normal;
+        margin-left: 20px;
+        .meal-name-container {
+            white-space: normal;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 20px;
+            line-height: 24px;
+            color: #ffffff;
+        }
+        .meal-description-container {
+            margin: 15px 0px;
+        }
+    }
+
+    .meal-avatar { margin-left: 20px; }
+	// .item-options {
+		// display: flex;
+		// flex-direction: column;
+		// width: 100px;
+		// // height: 75px;
+    .menu-share-button {
+        background-color: #745bc8;
+    }
+    .menu-send-button {
+        background-color: #d6a57d;
+    }
+    ion-option-button > .fa {
+        margin: 0 auto;
+        font-size: 36px;
+        color: #FFFFFF;
+    }
+  
 
 }

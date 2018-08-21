@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,6 +32,7 @@ import { MenuCategoryPage } from '../pages/menu-category/menu-category';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    CommonModule,
     HttpClientModule
   ],
   bootstrap: [IonicApp],
