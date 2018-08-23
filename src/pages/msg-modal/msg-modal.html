@@ -37,11 +37,13 @@
   </ion-icon>
   <h3>Send Your Friend A Message About The {{ mealName }} At Entree Vision </h3>
 
-  <form #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="submitMsg(f)">
     <ion-list>
       <ion-item>
         <ion-input 
-          type="tel" 
+          type="tel"
+          name="phoneNum"
+          ngModel
           placeholder="Your Friend's Phone #(XXX-XXX-XXXX)">
         </ion-input>
       </ion-item>
@@ -60,7 +62,8 @@
       ion-button
       full
       block 
-      type="submit" 
+      type="submit"
+      [disabled]="!f.valid"
       class="button button-block orange-button send-message-button" 
       >
         Send Message
