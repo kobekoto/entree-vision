@@ -17,6 +17,7 @@ import { CategoryComponent } from '../components/category/category';
 import { MenuService } from '../services/menus.service';
 import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 import { MsgModalPage } from '../pages/msg-modal/msg-modal';
+import { SMS } from '@ionic-native/sms';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MsgModalPage } from '../pages/msg-modal/msg-modal';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuService
+    MenuService,
+    SMS
   ]
 })
 export class AppModule {}
