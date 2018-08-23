@@ -1,5 +1,12 @@
 page-msg-modal {
     
+    h3 {
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
     .chatbubbles-icon {
         color: #c28857;
         display: block;
@@ -7,4 +14,43 @@ page-msg-modal {
         text-align: center;
         margin-bottom: 25px;
     }
+
+
+    .item.item-input  {
+        background-color: rgba(37, 37, 37, 1);
+        color: #FFFFFF;
+        border-radius: 10px;
+        border-top: none;
+        border: none;
+        textarea, input {
+            background-color: rgba(37, 37, 37, 1);
+            font-size: 18px;
+            line-height: 25px;
+            color: #FFFFFF;
+        }
+    }
+    .bottom-border-line-for-input {
+        width: 100%;
+        z-index: 3;
+        height: 1px;
+        background-color: #c28857;
+    }   
+    input::-webkit-input-placeholder {
+        color: #66605d !important;
+    }
+
+    form { margin-top: 60px; }
+
+    // Annoying Ionic CSS Hack overwrites
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+    .list-ios .item-block .item-inner, 
+    .list-ios > .item-block:last-child {
+        border-bottom: none;
+    }
+    .send-message-button {
+        background-color: #c28857;
+        border-radius: 7px; 
+    }           
 }

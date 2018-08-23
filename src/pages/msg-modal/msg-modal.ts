@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { ViewController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the MsgModalPage page.
@@ -12,9 +12,18 @@ import { ViewController } from 'ionic-angular';
   selector: 'page-msg-modal',
   templateUrl: 'msg-modal.html',
 })
-export class MsgModalPage {
+export class MsgModalPage implements OnInit {
+  private mealName: string;
+  private meal: string;
 
-  constructor(public viewCtrl: ViewController) {}
+  constructor(
+    public viewCtrl: ViewController,
+    public navParams: NavParams) {}
+
+  ngOnInit() {
+    this.mealName = this.navParams.get('meal');
+    this.meal = `The ${this.mealName} at Entree Vision is amazing. OMG you've GOT to check it out.`
+  }
 
   closeModal() {
     this.viewCtrl.dismiss();
