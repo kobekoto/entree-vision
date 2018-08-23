@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, ModalController } from 'ionic-angular';
 import { MealMenu } from '../../models/meal-menu';
+import { MsgModalPage } from '../msg-modal/msg-modal';
 
 /**
  * Generated class for the MenuCategoryPage page.
@@ -17,13 +18,18 @@ import { MealMenu } from '../../models/meal-menu';
 export class MenuCategoryPage implements OnInit {
   private mealMenu: MealMenu;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navParams: NavParams,
+    public modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.mealMenu = this.navParams.data.menu;
-    console.log(this.mealMenu); 
+  }
+
+  showMsgModal(meal) {
+    let msgModal = this.modalCtrl.create(MsgModalPage, { meal });
+    msgModal.present();
+    console.log(meal);
   }
 
   

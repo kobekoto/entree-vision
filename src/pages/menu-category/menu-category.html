@@ -36,7 +36,9 @@
           </ion-avatar>
           <div class="meal-info-container">
             <div class="meal-name-container">
-                <span class="meal-name"> {{ meal.name }}</span>
+                <span class="meal-name"> 
+                  {{ meal.name }}
+                </span>
             </div>
             <div class="meal-description-container">
                 <span class="meal-description">
@@ -45,7 +47,9 @@
             </div>
           </div>
         </ion-item>
-        <ion-item-options side="right">
+        <ion-item-options 
+          class="item-options"
+          side="right">
           <button
             class="menu-share-button"
             ion-button>
@@ -54,6 +58,7 @@
           </button>
           <button
             class="menu-send-button"
+            (click)="showMsgModal(meal.name)"
             ion-button>
             <ion-icon
               name="send"></ion-icon>

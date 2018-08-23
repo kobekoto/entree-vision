@@ -33,10 +33,28 @@ page-menu-category {
         .item-ios {
             background-color: #252525;
             padding-left: 30px;
+            padding-bottom: 10px;
         }
         .item-block > .item-inner {
             border-bottom: none;
         }
+        .button-inner {
+            font-size: 30px;
+            margin: 0 10px;
+        }
+        
+        .menu-share-button, .menu-send-button {
+            justify-content: center;
+            min-height: 102%;
+        }
+
+        .menu-share-button {
+            background-color: #745bc8;
+        }
+        .menu-send-button {
+            background-color: #d6a57d;
+        }
+    
     }
     
 
@@ -57,23 +75,13 @@ page-menu-category {
         }
     }
 
-    .meal-avatar { margin-left: 20px; }
-	// .item-options {
-		// display: flex;
-		// flex-direction: column;
-		// width: 100px;
-		// // height: 75px;
-    .menu-share-button {
-        background-color: #745bc8;
-    }
-    .menu-send-button {
-        background-color: #d6a57d;
-    }
-    ion-option-button > .fa {
-        margin: 0 auto;
-        font-size: 36px;
+    .meal-price {
+		font-size: 24px;
+		font-weight: 700;
         color: #FFFFFF;
-    }
-  
+        margin-top: 15px;
+	}    
+
+    .meal-avatar { margin-left: 20px; }  
 
 }
