@@ -43,6 +43,8 @@
         <ion-input 
           type="tel"
           name="phoneNum"
+          required
+          minlength="7"
           ngModel
           placeholder="Your Friend's Phone #(XXX-XXX-XXXX)">
         </ion-input>
@@ -53,8 +55,8 @@
           rows="4"
           name="meal"
           maxlength="160"
-          [ngModel]="meal"
-        >
+          [(ngModel)]="meal"
+        >{{meal}}
       </ion-textarea>        
       </ion-item>
     </ion-list>
@@ -64,11 +66,10 @@
       block 
       type="submit"
       [disabled]="!f.valid"
-      class="button button-block orange-button send-message-button" 
+      class="button send-message-button" 
       >
         Send Message
     </button>
-
   </form>
 
 </ion-content>

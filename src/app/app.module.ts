@@ -15,6 +15,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CategoryComponent } from '../components/category/category';
 import { MenuService } from '../services/menus.service';
+import { ReservationsService } from '../services/reservations.service'; 
 import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 import { MsgModalPage } from '../pages/msg-modal/msg-modal';
 import { SMS } from '@ionic-native/sms';
@@ -55,7 +56,8 @@ import { SMS } from '@ionic-native/sms';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuService,
-    SMS
+    SMS,
+    ReservationsService
   ]
 })
 export class AppModule {}

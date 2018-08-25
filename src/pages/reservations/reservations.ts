@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ReservationsService } from '../../services/reservations.service';
 
 /**
  * Generated class for the ReservationsPage page.
@@ -13,46 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-reservations',
   templateUrl: 'reservations.html',
 })
-export class ReservationsPage {
+export class ReservationsPage implements OnInit {
+  private daysOfWeek: [];
+  
+  constructor(
+    private reservationService: ReservationsService) {} 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  // TODO: JSON-Server convert and create service
-  daysOfWeek = [
-    {
-      day: 'Monday',
-      hours: 'closed'
-    },
-    {
-      day: 'Tuesday',
-      hours: '5pm - 11pm'
-    },
-    {
-      day: 'Wednesday',
-      hours: '5pm - 11pm'
-    },
-    {
-      day: 'Thursday',
-      hours: '5pm - 11pm'
-    },
-    {
-      day: 'Friday',
-      hours: '5pm - 11pm'
-    },
-    {
-      day: 'Saturday',
-      hours: '5pm - 11pm'
-    },
-    {
-      day: 'Sunday',
-      hours: '5pm - 11pm'
-    },
-  ];
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ReservationsPage');
+  ngOnInit() {
+    this.reservationService.getTimes()
+      .subscribe(
+        data => this.daysOfWeek = data
+      );
   }
 
 }
