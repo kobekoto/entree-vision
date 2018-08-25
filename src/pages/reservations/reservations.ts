@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import { ReservationsService } from '../../services/reservations.service';
+import { NgForm } from '@angular/forms';
 
 /**
  * Generated class for the ReservationsPage page.
@@ -16,6 +17,9 @@ import { ReservationsService } from '../../services/reservations.service';
 })
 export class ReservationsPage implements OnInit {
   private daysOfWeek: [];
+  private minDate: string;
+  private maxDate: string;
+  
   
   constructor(
     private reservationService: ReservationsService) {} 
@@ -25,6 +29,12 @@ export class ReservationsPage implements OnInit {
       .subscribe(
         data => this.daysOfWeek = data
       );
+    this.minDate = new Date().toISOString();
+    this.maxDate = new Date(+new Date + 12096e5).toISOString();
+  }
+
+  submitReservation(form: NgForm) {
+    console.log(form);
   }
 
 }

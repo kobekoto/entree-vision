@@ -43,21 +43,52 @@
             <div class="orange-middle-block"></div>
         </ion-grid>
     </div>
-    <form>
+    <form #f="ngForm"
+        (ngSubmit)="submitReservation(f)" 
+        class="reservation-form">
         <ion-item>
             <ion-label fixed>Date</ion-label>
-            <ion-datetime type="datetime"></ion-datetime>
+            <ion-datetime
+                required
+                name="date"
+                ngModel
+                [min]="minDate"
+                [max]="maxDate">
+            </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label fixed>Timeslot</ion-label>
-            <ion-datetime type="datetime"></ion-datetime>
+            <ion-datetime
+                required
+                name="time"
+                ngModel
+                displayFormat="H:mm"
+                hourValues="5,6,7,8,9,10"
+                minuteValues="0,15,30,45"
+                type="datetime">
+            </ion-datetime>
         </ion-item>
 
         <ion-item>
             <ion-label fixed># of Guests</ion-label>
-            <ion-input type="number"></ion-input>
+            <ion-input
+                name="guestsNum"
+                required
+                ngModel
+                min="1"
+                maxlength="1"
+                type="tel">
+            </ion-input>
         </ion-item>
+        <button
+            color="gold" 
+            type="submit"
+            class="submit-btn"
+            [disabled]="!f.valid"
+            ion-button>
+            Request Reservation
+        </button>
     </form>
 
 </ion-content>

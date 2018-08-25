@@ -72,5 +72,31 @@ page-reservations {
 		background-color: rgba(37, 37, 37, 0.8);
 		padding-top: 50px;
 	}
-	
+	.reservation-form {
+		width: 98%;
+		margin-top: 40px;
+		.item, .item-ios {
+			background: none;
+			color: #ffffff;
+			width: 98%;
+		}
+		.item-block > .item-inner {
+			border: 1px solid #c28857;
+			margin: 20px 0;
+			padding-right: 0;
+		}
+		.label {
+			margin-left: 10px;
+		}
+		.datetime {
+			width: 100%;
+			background-color: #FFFFFF;
+			color: #000000;
+		}
+		.submit-btn {
+			display: flex;
+			padding: 10px 40px;
+			margin: 20px auto;
+		}
+	}
 }
