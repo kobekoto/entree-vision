@@ -13,6 +13,19 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="category-view">
+  <ion-list no-lines>
+    <app-category
+      *ngFor="let event of events
+      let isOdd=odd;
+      let isEven=even"
+      [ngClass]="event.classColor"
+      [class.odd]="isOdd"
+      [class.even]="isEven"
+      [category]="event"
+      [subtitle]="event.subtitle"
+      >
+      {{ event }}
+    </app-category>
+  </ion-list>
 </ion-content>

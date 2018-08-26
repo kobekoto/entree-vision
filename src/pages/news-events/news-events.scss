@@ -1,3 +1,32 @@
 page-news-events {
+    .item-ios {
+        padding-left: 0px;
+    }
+    .label, .label-ios {
+        margin: 0;
+    }
+    .category-overlay-img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+    }
+    .category-title-name {
+        font-size: 2rem;
+        line-height: 100%;
+    }
 
+    .even {
+        .category-overlay-img {
+            display: flex;
+            margin-left: auto;
+        }        
+    }
+    .odd {
+        .overlay-text-box {
+            width: 50%;
+            margin-right: auto;
+            right: 0px;
+            white-space: normal;
+        }        
+    }    
 }

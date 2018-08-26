@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController } from 'ionic-angular';
+import { NewsEventsService } from '../../services/news-events.service';
+import { NewsEvent } from '../../models/news-event.interface';
 
 /**
  * Generated class for the NewsEventsPage page.
@@ -13,13 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-news-events',
   templateUrl: 'news-events.html',
 })
-export class NewsEventsPage {
+export class NewsEventsPage implements OnInit {
+  events: NewsEvent[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    private newsEvtService: NewsEventsService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewsEventsPage');
+  }
+
+  ngOnInit() {
+    this.newsEvtService.getEvents()
+      .subscribe(
+        data => this.events = data
+      )
   }
 
 }
