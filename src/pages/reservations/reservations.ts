@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, ModalController } from 'ionic-angular';
 import { ReservationsService } from '../../services/reservations.service';
 import { NgForm } from '@angular/forms';
+import { ReservationModalPage } from '../reservation-modal/reservation-modal';
 
 /**
  * Generated class for the ReservationsPage page.
@@ -19,10 +20,12 @@ export class ReservationsPage implements OnInit {
   private daysOfWeek: [];
   private minDate: string;
   private maxDate: string;
-  
+  private bookedReservation: boolean = false;
+  private reservationInfo: {};
   
   constructor(
-    private reservationService: ReservationsService) {} 
+    private reservationService: ReservationsService,
+    private modalCtrl: ModalController) {} 
 
   ngOnInit() {
     this.reservationService.getTimes()
@@ -30,11 +33,30 @@ export class ReservationsPage implements OnInit {
         data => this.daysOfWeek = data
       );
     this.minDate = new Date().toISOString();
+    // maxDate set in form is 2 weeks from today
     this.maxDate = new Date(+new Date + 12096e5).toISOString();
   }
 
   submitReservation(form: NgForm) {
-    console.log(form);
+    this.bookedReservation = true;
+    if (form.valid) {
+      let reservationModal = this.modalCtrl.create(ReservationModalPage, { reservationInfo: form.value });
+      reservationModal.present();
+      reservationModal.onDidDismiss(data => {
+        this.reservationInfo = {
+          bookingDate: data.date,
+          bookingTime: data.time,
+          guestsNum: data.guestsNum
+        };
+      })
+
+      // Clear form values
+      form.reset();
+    }
+  }
+
+  switchBooking() {
+    this.bookedReservation = false;
   }
 
 }

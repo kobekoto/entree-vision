@@ -72,9 +72,18 @@ page-reservations {
 		background-color: rgba(37, 37, 37, 0.8);
 		padding-top: 50px;
 	}
+
+	.booked-container {
+		opacity: 0;
+		transform: translateY(100%);
+		transition: all 600ms ease-in-out .5s;
+	}
+
 	.reservation-form {
 		width: 98%;
 		margin-top: 40px;
+		transform: translateX(100%);
+		transition: transform 300ms;
 		.item, .item-ios {
 			background: none;
 			color: #ffffff;
@@ -99,4 +108,36 @@ page-reservations {
 			margin: 20px auto;
 		}
 	}
+    .reservation-row {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 18px;
+		color: #ffffff;
+		.col { min-height: 35px; }
+    }
+    .img-reservation-container {
+		opacity: 0;
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+		transition: all 600ms ease-in-out .5s;
+		img {
+			width: 100vw;
+		}
+	}	
+	.cancel-reservation {
+		display: flex;
+		justify-content: center;
+		margin: 30px auto;
+	}
+	
+	.translate-in-right {
+		transform: translateX(0);
+	}
+
+	.translate-in-up {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	
 }

@@ -44,14 +44,17 @@
         </ion-grid>
     </div>
     <form #f="ngForm"
+        *ngIf="!bookedReservation"
+        [class.translate-in-right]="!bookedReservation"
         (ngSubmit)="submitReservation(f)" 
         class="reservation-form">
         <ion-item>
             <ion-label fixed>Date</ion-label>
             <ion-datetime
                 required
-                name="date"
                 ngModel
+                name="date"
+                placeholder="Select Date"
                 [min]="minDate"
                 [max]="maxDate">
             </ion-datetime>
@@ -61,8 +64,9 @@
             <ion-label fixed>Timeslot</ion-label>
             <ion-datetime
                 required
-                name="time"
                 ngModel
+                name="time"
+                placeholder="Select Timeslot"
                 displayFormat="H:mm"
                 hourValues="5,6,7,8,9,10"
                 minuteValues="0,15,30,45"
@@ -73,9 +77,9 @@
         <ion-item>
             <ion-label fixed># of Guests</ion-label>
             <ion-input
-                name="guestsNum"
                 required
                 ngModel
+                name="guestsNum"
                 min="1"
                 maxlength="1"
                 type="tel">
@@ -90,5 +94,52 @@
             Request Reservation
         </button>
     </form>
-
+    <div 
+        class="booked-container" 
+        [class.translate-in-up]="bookedReservation"
+        *ngIf="bookedReservation"
+        >
+        <ion-grid>
+            <ion-row justify-content-center>
+                <h4>Your Reservation</h4>
+            </ion-row>
+            <ion-row 
+                class="reservation-row"
+                text-center>
+                <ion-col>
+                    <span>Time</span>
+                </ion-col>
+                <ion-col>
+                    <span>Date</span>
+                </ion-col>
+                <ion-col>
+                    <span>Guests</span>
+                </ion-col>
+            </ion-row>
+            <ion-row text-center>
+                <ion-col>
+                    {{ reservationInfo?.bookingTime }}
+                </ion-col>
+                <ion-col>
+                    {{ reservationInfo?.bookingDate | date: 'mediumDate' }}
+                </ion-col>
+                <ion-col>
+                    {{ reservationInfo?.guestsNum }}
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div
+            [class.translate-in-up]="bookedReservation" 
+            class="img-reservation-container">
+            <img src="assets/imgs/reservation/holding_dinner_plate.jpg">
+        </div>
+        <div class="cancel-reservation" justify-content-center>
+                <button
+                (click)="switchBooking()"
+                color="danger" 
+                ion-button>
+                Cancel Reservation
+            </button>
+        </div>
+    </div>
 </ion-content>
