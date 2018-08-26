@@ -3,6 +3,7 @@ import { IonicPage, ModalController } from 'ionic-angular';
 import { ReservationsService } from '../../services/reservations.service';
 import { NgForm } from '@angular/forms';
 import { ReservationModalPage } from '../reservation-modal/reservation-modal';
+import { DaysOfWeek } from '../../models/days-of-week.interface';
 
 /**
  * Generated class for the ReservationsPage page.
@@ -17,7 +18,7 @@ import { ReservationModalPage } from '../reservation-modal/reservation-modal';
   templateUrl: 'reservations.html',
 })
 export class ReservationsPage implements OnInit {
-  private daysOfWeek: [];
+  private daysOfWeek: DaysOfWeek[];
   private minDate: string;
   private maxDate: string;
   private bookedReservation: boolean = false;

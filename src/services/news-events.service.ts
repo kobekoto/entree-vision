@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { DaysOfWeek } from "../models/days-of-week.interface";
+import { NewsEvent } from "../models/news-event.interface";
+
 
 @Injectable()
-export class ReservationsService {
+export class NewsEventsService {
     constructor(private http: HttpClient) {}
 
-    getTimes() {
+    getEvents() {
         return this.http
-            .get<DaysOfWeek>('http://localhost:3000/times')
+            .get<NewsEvent[]>('http://localhost:3000/newsandevents')
     }
 }
