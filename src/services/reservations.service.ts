@@ -8,6 +8,6 @@ export class ReservationsService {
 
     getTimes() {
         return this.http
-            .get<DaysOfWeek>('http://localhost:3000/times')
+            .get<DaysOfWeek[]>('http://localhost:3000/times')
     }
 }

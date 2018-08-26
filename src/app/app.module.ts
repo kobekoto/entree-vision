@@ -21,6 +21,8 @@ import { MsgModalPage } from '../pages/msg-modal/msg-modal';
 import { SMS } from '@ionic-native/sms';
 import { ReservationModalPage } from '../pages/reservation-modal/reservation-modal';
 import { NewsEventsService } from '../services/news-events.service';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { NotificationsService } from '../services/notifications.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NewsEventsService } from '../services/news-events.service';
     CategoryComponent,
     MenuCategoryPage,
     MsgModalPage,
-    ReservationModalPage
+    ReservationModalPage,
+    NotificationsPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { NewsEventsService } from '../services/news-events.service';
     TabsPage,
     MenuCategoryPage,
     MsgModalPage,
-    ReservationModalPage
+    ReservationModalPage,
+    NotificationsPage
   ],
   providers: [
     StatusBar,
@@ -62,7 +66,8 @@ import { NewsEventsService } from '../services/news-events.service';
     MenuService,
     SMS,
     ReservationsService,
-    NewsEventsService
+    NewsEventsService,
+    NotificationsService
   ]
 })
 export class AppModule {}

@@ -18,7 +18,7 @@ import { DaysOfWeek } from '../../models/days-of-week.interface';
   templateUrl: 'reservations.html',
 })
 export class ReservationsPage implements OnInit {
-  private daysOfWeek: DaysOfWeek[];
+  daysOfWeek: DaysOfWeek[] = [];
   private minDate: string;
   private maxDate: string;
   private bookedReservation: boolean = false;
