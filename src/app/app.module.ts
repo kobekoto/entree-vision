@@ -19,6 +19,7 @@ import { ReservationsService } from '../services/reservations.service';
 import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 import { MsgModalPage } from '../pages/msg-modal/msg-modal';
 import { SMS } from '@ionic-native/sms';
+import { ReservationModalPage } from '../pages/reservation-modal/reservation-modal';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SMS } from '@ionic-native/sms';
     TabsPage,
     CategoryComponent,
     MenuCategoryPage,
-    MsgModalPage
+    MsgModalPage,
+    ReservationModalPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SMS } from '@ionic-native/sms';
     ContactPage,
     TabsPage,
     MenuCategoryPage,
-    MsgModalPage
+    MsgModalPage,
+    ReservationModalPage
   ],
   providers: [
     StatusBar,
