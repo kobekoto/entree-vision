@@ -6,6 +6,15 @@ $wine: #da3c3c;
 
 page-menus {
 
+    .odd {
+        .item-ios {
+		    padding-bottom: 20px;
+        }
+        .overlay-text-box > .category-title-container {
+            margin-right: 30px;
+        }
+    }
+
     .image-wrap {
 		display: flex;
 		padding-bottom: 20px;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavParams, ModalController } from 'ionic-angular';
-import { MealMenu } from '../../models/meal-menu';
+import { MealMenu } from '../../models/meal-menu.interface';
 import { MsgModalPage } from '../msg-modal/msg-modal';
 
 /**

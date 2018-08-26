@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { MenuService } from '../../services/menus.service';
 import { MenuCategoryPage } from '../menu-category/menu-category';
-import { MealMenu } from '../../models/meal-menu';
+import { MealMenu } from '../../models/meal-menu.interface';
 
 /**
  * Generated class for the MenusPage page.

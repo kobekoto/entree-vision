@@ -20,6 +20,7 @@ import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 import { MsgModalPage } from '../pages/msg-modal/msg-modal';
 import { SMS } from '@ionic-native/sms';
 import { ReservationModalPage } from '../pages/reservation-modal/reservation-modal';
+import { NewsEventsService } from '../services/news-events.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ReservationModalPage } from '../pages/reservation-modal/reservation-mod
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuService,
     SMS,
-    ReservationsService
+    ReservationsService,
+    NewsEventsService
   ]
 })
 export class AppModule {}
