@@ -29,7 +29,7 @@ page-notifications {
         background-color: rgba(37, 37, 37, 1);
         border-bottom: 1px solid rgba(34, 32, 31, 1);
         border-top: none;
-        color:$white;
+        color: $white;
     }
     p {
         white-space: normal;
@@ -51,10 +51,9 @@ page-notifications {
         font-size: 20px;
         padding-top: 5px;
     }
-	.unread.item {
-		color: $gold;
-		p {
-			color: $gold;			
-		}
-	}        
+    .unread {
+        .item, .item-ios, p {
+            color: $gold;
+        }
+    }
 }

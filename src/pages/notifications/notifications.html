@@ -14,30 +14,61 @@
 
 
 <ion-content color="appdark">
-    <div class="unread-messages">1 unread</div>
+    <div 
+      *ngIf="unreadCount"
+      class="unread-messages">
+      {{ unreadCount }} unread
+    </div>
     <ion-list no-lines>
-      <ion-item
+      <ion-item-sliding
+        #slidingItem
+        (tap)="slideClicked(notification)"
         [ngClass]="{ 'unread': notification.unread }" 
-        *ngFor="let notification of notifications">
-        <div class="row notifications-row">
-          <div class="col-2 col">
-            <div 
-              class="mail-icon notification-type-icon" 
-              *ngIf="notification.type === 'mail'">
-                <ion-icon name="mail"></ion-icon>
+        *ngFor="let notification of notifications; let i=index"
+        id="item-{{ i }}">
+        <ion-item>
+          <div class="row notifications-row">
+            <div class="col-2 col">
+              <div 
+                class="mail-icon notification-type-icon" 
+                *ngIf="notification.type === 'mail' && !notification.unread ">
+                  <ion-icon name="mail-open"></ion-icon>
+              </div>
+              <div 
+                class="mail-icon notification-type-icon" 
+                *ngIf="notification.type === 'mail' && notification.unread ">
+                  <ion-icon name="mail"></ion-icon>
+              </div>
+              <div 
+                class="message-icon notification-type-icon" 
+                *ngIf="notification.type === 'message'">
+                  <ion-icon name="chatbubbles"></ion-icon>
+              </div>
             </div>
-            <div 
-              class="message-icon notification-type-icon" 
-              *ngIf="notification.type === 'message'">
-                <ion-icon name="chatbubbles"></ion-icon>
+            <div class="col-8 col">
+              <div class="row notification-title">{{ notification.title }}</div>
+              <p class="row notification-description"> {{ notification.message }} </p>
+              <div class="row notification-time">{{ notification.date }} </div>          
             </div>
           </div>
-          <div class="col-8 col">
-            <div class="row notification-title">{{ notification.title }}</div>
-            <p class="row notification-description"> {{ notification.message }} </p>
-            <div class="row notification-time">{{ notification.date }} </div>          
-          </div>
-        </div>
-      </ion-item>
+        </ion-item>
+        <ion-item-options side="left">
+          <button 
+          ion-button 
+          (click)="markUnread(notification, slidingItem)">
+          <ion-icon name="mail"></ion-icon>
+          Unread
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button 
+          ion-button
+          color="danger"
+          (click)="delete(notification)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button> 
+      </ion-item-options>
+      </ion-item-sliding>
     </ion-list>
 </ion-content>
