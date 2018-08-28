@@ -16,7 +16,7 @@ import { NgForm } from '@angular/forms';
 })
 export class MsgModalPage implements OnInit {
   private mealName: string;
-  private meal: string;
+  meal: string;
 
   constructor(
     public viewCtrl: ViewController,

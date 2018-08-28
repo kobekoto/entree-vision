@@ -16,7 +16,7 @@ import { MsgModalPage } from '../msg-modal/msg-modal';
   templateUrl: 'menu-category.html',
 })
 export class MenuCategoryPage implements OnInit {
-  private mealMenu: MealMenu;
+  mealMenu: MealMenu;
 
   constructor(
     public navParams: NavParams,
@@ -29,7 +29,6 @@ export class MenuCategoryPage implements OnInit {
   showMsgModal(meal) {
     let msgModal = this.modalCtrl.create(MsgModalPage, { meal });
     msgModal.present();
-    console.log(meal);
   }
 
   
