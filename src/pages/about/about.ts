@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AboutService } from '../../services/about.service';
+import { Staff } from '../../models/about.interface';
 
 /**
  * Generated class for the AboutPage page.
@@ -16,19 +18,23 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AboutPage implements OnInit {
   videoUrl: any;
+  staffMembers: Staff[];
 
   constructor(
-    private sanitizer: DomSanitizer) {}
+    private sanitizer: DomSanitizer,
+    private aboutService: AboutService) {}
 
   ngOnInit() {
     this.videoUrl = this.getIframeSrc();
+    this.aboutService.getStaff()
+      .subscribe(
+        data => this.staffMembers = data
+      );
   }
 
   getIframeSrc() {
     return this.sanitizer
       .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
   }
-
-  
 
 }

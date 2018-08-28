@@ -23,4 +23,31 @@
       allowfullscreen>
     </iframe>
   </div>
+  <div class="about-us-text-container">
+    <h3>About Us</h3>
+    <p class="about-us-story">
+        Parties and family gatherings are popular this time of the year. Whether you're celebrating an anniversary, a birthday, a graduation, a holiday or the start of your favorite sport's season,
+    </p>
+  </div>
+  <ion-slides>
+    <ion-slide 
+      *ngFor="let member of staffMembers">
+      <div class="img-box">
+        <img [src]="member.img">
+      </div>
+      <div class="member-info-container">
+        <div class="member-name-title-container">
+            <div class="member-name">
+                <span>{{ member.name }}</span>
+            </div>
+            <div class="member-title">
+                <span>{{ member.title }}</span>
+            </div>
+        </div>
+        <div class="member-description-container">
+            <p> {{ member.description }}</p>
+        </div>
+    </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

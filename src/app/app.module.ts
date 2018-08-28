@@ -23,6 +23,7 @@ import { ReservationModalPage } from '../pages/reservation-modal/reservation-mod
 import { NewsEventsService } from '../services/news-events.service';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { NotificationsService } from '../services/notifications.service';
+import { AboutService } from '../services/about.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { NotificationsService } from '../services/notifications.service';
     SMS,
     ReservationsService,
     NewsEventsService,
-    NotificationsService
+    NotificationsService,
+    AboutService
   ]
 })
 export class AppModule {}
