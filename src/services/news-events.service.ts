@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { NewsEvent } from "../models/news-event.interface";
-
+import { ENV } from "../environments/environment";
 
 @Injectable()
 export class NewsEventsService {
@@ -9,6 +9,7 @@ export class NewsEventsService {
 
     getEvents() {
         return this.http
-            .get<NewsEvent[]>('http://localhost:3000/newsandevents')
+            .get<NewsEvent[]>(`${ENV.API_URL}/newsandevents`)
+            
     }
 }

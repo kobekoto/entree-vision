@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Staff } from "../models/about.interface";
+import { ENV } from "../environments/environment";
 
 @Injectable()
 export class AboutService {
@@ -8,6 +9,7 @@ export class AboutService {
 
     getStaff() {
         return this.http
-            .get<Staff[]>('http://localhost:3000/about')
+            .get<Staff[]>(`${ENV.API_URL}/about`)
     }
 }
+ENV
