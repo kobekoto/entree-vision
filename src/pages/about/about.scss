@@ -1,3 +1,31 @@
 page-about {
-
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .about-us-text-container {
+        margin-left: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-left: 5px solid #c28857;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        h3 {
+            color: #FFFFFF;
+        }
+        .about-us-story {
+            color: #FFFFFF;
+            width: 74%;
+        }
+    }    
 }

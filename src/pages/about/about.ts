@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Generated class for the AboutPage page.
@@ -13,13 +14,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-about',
   templateUrl: 'about.html',
 })
-export class AboutPage {
+export class AboutPage implements OnInit {
+  videoUrl: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private sanitizer: DomSanitizer) {}
+
+  ngOnInit() {
+    this.videoUrl = this.getIframeSrc();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
+  getIframeSrc() {
+    return this.sanitizer
+      .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
   }
+
+  
 
 }
