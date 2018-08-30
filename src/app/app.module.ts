@@ -5,6 +5,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { SMS } from '@ionic-native/sms';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 
 import { MyApp } from './app.component';
 import { MenusPage } from '../pages/menus/menus';
@@ -18,12 +21,13 @@ import { MenuService } from '../services/menus.service';
 import { ReservationsService } from '../services/reservations.service'; 
 import { MenuCategoryPage } from '../pages/menu-category/menu-category';
 import { MsgModalPage } from '../pages/msg-modal/msg-modal';
-import { SMS } from '@ionic-native/sms';
 import { ReservationModalPage } from '../pages/reservation-modal/reservation-modal';
 import { NewsEventsService } from '../services/news-events.service';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { NotificationsService } from '../services/notifications.service';
 import { AboutService } from '../services/about.service';
+
+
 
 @NgModule({
   declarations: [
@@ -64,8 +68,9 @@ import { AboutService } from '../services/about.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuService,
     SMS,
+    GoogleMaps,
+    MenuService,
     ReservationsService,
     NewsEventsService,
     NotificationsService,

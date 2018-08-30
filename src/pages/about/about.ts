@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AboutService } from '../../services/about.service';
 import { Staff } from '../../models/about.interface';
 
@@ -17,7 +17,7 @@ import { Staff } from '../../models/about.interface';
   templateUrl: 'about.html',
 })
 export class AboutPage implements OnInit {
-  videoUrl: any;
+  videoUrl: SafeResourceUrl;
   staffMembers: Staff[];
 
   constructor(
@@ -25,16 +25,17 @@ export class AboutPage implements OnInit {
     private aboutService: AboutService) {}
 
   ngOnInit() {
-    this.videoUrl = this.getIframeSrc();
+    this.videoUrl = this.sanitizer
+    .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
     this.aboutService.getStaff()
       .subscribe(
         data => this.staffMembers = data
       );
   }
 
-  getIframeSrc() {
-    return this.sanitizer
-      .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
-  }
+  // getIframeSrc() {
+  //   return this.sanitizer
+  //     .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
+  // }
 
 }
