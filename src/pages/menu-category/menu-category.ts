@@ -31,6 +31,4 @@ export class MenuCategoryPage implements OnInit {
     msgModal.present();
   }
 
-  
-
 }

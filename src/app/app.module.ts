@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { SMS } from '@ionic-native/sms';
 import { GoogleMaps } from '@ionic-native/google-maps';
-
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 import { MyApp } from './app.component';
 import { MenusPage } from '../pages/menus/menus';
@@ -71,6 +71,7 @@ import { AboutService } from '../services/about.service';
     SMS,
     GoogleMaps,
     MenuService,
+    LaunchNavigator,
     ReservationsService,
     NewsEventsService,
     NotificationsService,

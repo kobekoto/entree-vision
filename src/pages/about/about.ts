@@ -33,9 +33,4 @@ export class AboutPage implements OnInit {
       );
   }
 
-  // getIframeSrc() {
-  //   return this.sanitizer
-  //     .bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/pMN5D5FWCxI?&showinfo=0');
-  // }
-
 }

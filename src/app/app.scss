@@ -24,3 +24,30 @@
     background-color: rgba(34, 32, 31, 1);
     color: #ffffff;
 }
+
+@font-face {
+    font-family: "JosefinSans";
+    src: url("../fonts/Josefin_Sans/JosefinSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "JosefinSans";
+    src: url("../fonts/Josefin_Sans/JosefinSans-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "JosefinSans";
+    src: url("../fonts/Josefin_Sans/JosefinSans-Italic.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "JosefinSans";
+    src: url("../fonts/Josefin_Sans/JosefinSans-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+body, html {
+  font-family: 'JosefinSans', sans-serif;
+}

@@ -9,7 +9,6 @@ page-contact {
 	}	
 	#google-map {
 		margin-top: 40px;
-	    width: 100%;
 	    height: 300px;
 	}
 	.contact-us-today-container{
@@ -21,16 +20,16 @@ page-contact {
 		margin-top: 40px;
     }
     .address-details > span {
-        width: 100%;
+		width: 100%;
     }
-
+    
 	.add-to-contacts-container, .get-directions-container {
 		margin-top: 30px;
 		display: flex;
 		justify-content: center;
 	}
-	.get-directions-button {
-		background-color: #c28857;
-		width: 155px;
-	}
+	
+    .contact-button {
+        width: 155px;
+    }
 }
