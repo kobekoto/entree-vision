@@ -12,4 +12,3 @@ export class AboutService {
             .get<Staff[]>(`${ENV.API_URL}/about`)
     }
 }
-ENV
